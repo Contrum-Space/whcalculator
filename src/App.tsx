@@ -1,10 +1,18 @@
 import './App.css';
 import { Container, Grid, SimpleGrid, Skeleton } from '@mantine/core';
 import WormholeSelect from './components/wormholeSelect/WormholeSelect';
+import { useState } from 'react';
+import MassSelect from './components/massselect/MassSelect';
+import Calculate from './components/calculate/Calculate';
+import JumpsLeft from './components/jumpsleft/JumpsLeft';
 
 const PRIMARY_COL_HEIGHT = '89vh';
 
 export function App() {
+  const [mass, setMass] = useState(0);
+  const [finalMass, setFinalMass] = useState(0);
+  const [customFinalMass, setCustomFinalMass] = useState(0);
+
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-sm) / 2)`;
 
   return (
@@ -13,17 +21,17 @@ export function App() {
         <Grid gutter="sm">
           <Grid.Col>
             <Container fluid h={SECONDARY_COL_HEIGHT}>
-              <WormholeSelect />
+              <WormholeSelect mass={mass} setMass={setMass} />
             </Container>
           </Grid.Col>
           <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+            <MassSelect mass={mass} setFinalMass={setFinalMass} />
           </Grid.Col>
           <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+            <Calculate finalMass={finalMass} />
           </Grid.Col>
         </Grid>
-        <Skeleton height={PRIMARY_COL_HEIGHT} radius="md" animate={false} />
+        <JumpsLeft mass={customFinalMass} />
       </SimpleGrid>
     </Container >
   );

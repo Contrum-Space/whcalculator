@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Frigate",
+        "mass": 1100000
+    },
+    {
+        "name": "Destroyer",
+        "mass": 1700000
+    },
+    {
+        "name": "Porpoise",
+        "mass": 4500000
+    },
+    {
+        "name": "Hauler",
+        "mass": 11000000
+    },
+    {
+        "name": "DST",
+        "mass": 20000000
+    },
+    {
+        "name": "Cruiser",
+        "mass": 13000000
+    },
+    {
+        "name": "Battlecruiser",
+        "mass": 14250000
+    },
+    {
+        "name": "Rolling Hauler",
+        "mass": 122000000
+    },
+    {
+        "name": "Rolling HIC",
+        "mass": 138000000
+    },
+    {
+        "name": "Rolling Battleship Cold",
+        "mass": 200000000
+    },
+    {
+        "name": "Rolling Battleship Hot",
+        "mass": 300000000
+    },
+    {
+        "name": "Battleship",
+        "mass": 95000000
+    },
+    {
+        "name": "Orca",
+        "mass": 150000000
+    },
+    {
+        "name": "Rorqual",
+        "mass": 800000000
+    },
+    {
+        "name": "Freighter",
+        "mass": 900000000
+    },
+    {
+        "name": "Carrier",
+        "mass": 1230000000
+    },
+    {
+        "name": "Dreadnought",
+        "mass": 1260000000
+    },
+    {
+        "name": "Rolling Carrier Hot",
+        "mass": 1730000000
+    }
+]

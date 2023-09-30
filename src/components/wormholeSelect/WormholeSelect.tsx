@@ -3,10 +3,9 @@ import wormholesJSON from '../../data/wormholes.json';
 import { useEffect, useState } from 'react';
 import { numberWithCommas } from '../../util/format';
 
-export default function WormholeSelect() {
+export default function WormholeSelect({ mass, setMass }: { mass: number, setMass: React.Dispatch<React.SetStateAction<number>> }) {
     const [modifiedMass, setModifiedMass] = useState(0);
-    const [mass, setMass] = useState(0);
-    const [wormhole, setWormhole] = useState("H900");
+    const [wormhole, setWormhole] = useState("E004");
     const [modifier, setModifier] = useState("Fresh");
 
     const [masses, setMasses] = useState<{ label: string, value: string }[]>([]);
