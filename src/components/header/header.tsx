@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Container, Group, Burger, Title } from '@mantine/core';
+import { Container, Group, Burger, Title, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import classes from './header.module.css';
 
 const links = [
-    { link: '/github', label: 'Github' },
-    { link: '/community', label: 'Community' },
+    { link: 'https://github.com/purry03/whcalulator/', label: 'Github' },
 ];
 
 export function Header() {
@@ -18,10 +17,8 @@ export function Header() {
             href={link.link}
             className={classes.link}
             data-active={active === link.link || undefined}
-            onClick={(event) => {
-                event.preventDefault();
-                setActive(link.link);
-            }}
+            target='_blank'
+            rel='noreferrer'
         >
             {link.label}
         </a>
@@ -37,6 +34,7 @@ export function Header() {
 
                 <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
             </Container>
+            <Divider />
         </header>
     );
 }

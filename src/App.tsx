@@ -10,8 +10,8 @@ const PRIMARY_COL_HEIGHT = '89vh';
 
 export function App() {
   const [mass, setMass] = useState(0);
+  const [modifiedMass, setModifiedMass] = useState(0)
   const [finalMass, setFinalMass] = useState(0);
-  const [customFinalMass, setCustomFinalMass] = useState(0);
 
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-sm) / 2)`;
 
@@ -21,17 +21,17 @@ export function App() {
         <Grid gutter="sm">
           <Grid.Col>
             <Container fluid h={SECONDARY_COL_HEIGHT}>
-              <WormholeSelect mass={mass} setMass={setMass} />
+              <WormholeSelect mass={mass} setMass={setMass} modifiedMass={modifiedMass} setModifiedMass={setModifiedMass} />
             </Container>
           </Grid.Col>
           <Grid.Col span={6}>
-            <MassSelect mass={mass} setFinalMass={setFinalMass} />
+            <MassSelect mass={modifiedMass} setFinalMass={setFinalMass} />
           </Grid.Col>
           <Grid.Col span={6}>
             <Calculate finalMass={finalMass} />
           </Grid.Col>
         </Grid>
-        <JumpsLeft mass={customFinalMass} />
+        <JumpsLeft mass={finalMass} />
       </SimpleGrid>
     </Container >
   );

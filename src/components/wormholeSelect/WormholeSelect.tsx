@@ -3,8 +3,7 @@ import wormholesJSON from '../../data/wormholes.json';
 import { useEffect, useState } from 'react';
 import { numberWithCommas } from '../../util/format';
 
-export default function WormholeSelect({ mass, setMass }: { mass: number, setMass: React.Dispatch<React.SetStateAction<number>> }) {
-    const [modifiedMass, setModifiedMass] = useState(0);
+export default function WormholeSelect({ mass, modifiedMass, setMass, setModifiedMass }: { mass: number, modifiedMass: number, setMass: React.Dispatch<React.SetStateAction<number>>, setModifiedMass: React.Dispatch<React.SetStateAction<number>> }) {
     const [wormhole, setWormhole] = useState("E004");
     const [modifier, setModifier] = useState("Fresh");
 
@@ -75,6 +74,7 @@ export default function WormholeSelect({ mass, setMass }: { mass: number, setMas
             <Group>
                 <Badge color="green" variant='light'>Original Mass : {numberWithCommas(mass)} Kg</Badge>
                 <Badge color="green" ml='auto' variant='light'>Selected Mass : {numberWithCommas(modifiedMass)} Kg</Badge>
+                <Badge color={modifiedMass / mass > 0.5 ? 'green' : modifiedMass / mass > 0.1 ? "orange" : "red"} variant='filled'>{modifiedMass / mass * 100}% of original</Badge>
             </Group>
         </>
     );

@@ -7,6 +7,7 @@ import { AppShell, MantineProvider, createTheme } from '@mantine/core';
 
 import '@mantine/core/styles.css';
 import { Header } from './components/header/header';
+import { Footer } from './components/footer/footer';
 
 const theme = createTheme({
   scale: 1,
@@ -50,6 +51,7 @@ root.render(
       defaultColorScheme='dark' theme={theme}>
       <Header />
       <App />
+      <Footer />
     </MantineProvider>
   </React.StrictMode >
 );
