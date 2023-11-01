@@ -15,7 +15,7 @@ export function App() {
 
   const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 2 - var(--mantine-spacing-sm) / 2)`;
 
-  const child = <Image src='/advert.png' height='100%' width='100%' alt='advert image' />
+  const child = <Image src='/img.png' height='100%' width='100%' alt='placeholder' />
 
   return (
     <Container fluid my="md">
