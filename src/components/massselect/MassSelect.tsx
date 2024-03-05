@@ -2,11 +2,9 @@ import { Box, Input, Stack, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 
 export default function MassSelect({
-    mass,
-    setFinalMass,
+    setMassPassed,
 }: {
-    mass: number;
-    setFinalMass: React.Dispatch<React.SetStateAction<number>>;
+    setMassPassed: React.Dispatch<React.SetStateAction<number>>;
 }) {
     const [values, setValues] = useState({
         hbc: 0,
@@ -16,13 +14,6 @@ export default function MassSelect({
         custom: 0,
     });
 
-    console.log(mass);
-
-    useEffect(() => {
-        calculateFinalMass();
-    }, [mass]);
-
-
     useEffect(() => {
         calculateFinalMass()
     }, [values]);
@@ -31,7 +22,7 @@ export default function MassSelect({
     function calculateFinalMass() {
         const { hbc, crb, rhic, hrc, custom } = values;
         const massPassed = 300000000 * hbc + 200000000 * crb + 138000000 * rhic + 1230000000 * hrc + custom;
-        setFinalMass(mass - massPassed);
+        setMassPassed(massPassed);
     }
 
     const handleInputChange = (name: string, value: string) => {

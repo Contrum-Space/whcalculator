@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { AppShell, MantineProvider, createTheme } from '@mantine/core';
 
 import '@mantine/core/styles.css';
-import { Header } from './components/header/header';
+import Header from './components/header/Header';
 import { Footer } from './components/footer/footer';
 
 const theme = createTheme({

@@ -3,7 +3,7 @@ import shipJson from '../../data/ships.json';
 import { useEffect, useState } from "react";
 import { numberWithCommas } from "../../util/format";
 
-export default function JumpsLeft({ mass }: { mass: number }) {
+export default function JumpsLeft({ mass, massPassed }: { mass: number, massPassed: number }) {
     const [ships, setShips] = useState<{ name: string, mass: number }[]>([]);
 
     useEffect(() => {
@@ -14,9 +14,9 @@ export default function JumpsLeft({ mass }: { mass: number }) {
         <Table.Tr key={ship.name}>
             <Table.Td>{ship.name}</Table.Td>
             <Table.Td ta='right'>{numberWithCommas(Math.round(ship.mass))} Kg</Table.Td>
-            <Table.Td ta='right'>{numberWithCommas(Math.round((mass * 0.9) / ship.mass))}</Table.Td>
-            <Table.Td ta='right'>{numberWithCommas(Math.round((mass * 1) / ship.mass))}</Table.Td>
-            <Table.Td ta='right'>{numberWithCommas(Math.round((mass * 1.1) / ship.mass))}</Table.Td>
+            <Table.Td ta='right'>{numberWithCommas(Math.floor(Math.round(mass * 0.9 - massPassed) / ship.mass))}</Table.Td>
+            <Table.Td ta='right'>{numberWithCommas(Math.floor(Math.round(mass * 1 - massPassed) / ship.mass))}</Table.Td>
+            <Table.Td ta='right'>{numberWithCommas(Math.floor(Math.round(mass * 1.1 - massPassed) / ship.mass))}</Table.Td>
         </Table.Tr>
     ));
 

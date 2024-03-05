@@ -1,13 +1,13 @@
 import { Box, Input, Table, Title } from "@mantine/core"
 import { numberWithCommas } from "../../util/format";
 
-export default function Calculate({ finalMass }: { finalMass: number }) {
+export default function Calculate({ modifiedMass, massPassed }: { modifiedMass: number, massPassed: number }) {
 
 
     const elements = [
-        { mass: finalMass * 0.9, variance: '-10%' },
-        { mass: finalMass, variance: '0%' },
-        { mass: finalMass * 1.1, variance: '+10%' },
+        { mass: Math.round(modifiedMass * 0.9) - massPassed, variance: '-10%' },
+        { mass: Math.round(modifiedMass) - massPassed, variance: '0%' },
+        { mass: Math.round(modifiedMass * 1.1) - massPassed, variance: '+10%' },
     ];
 
     const rows = elements.map((element) => (

@@ -12,6 +12,14 @@
         "mass": 4500000
     },
     {
+        "name": "Victorieux Luxury Yacht",
+        "mass": 10000000
+    },
+    {
+        "name": "Victorieux Luxury Yacht (100mn AB)",
+        "mass": 60000000
+    },
+    {
         "name": "Hauler",
         "mass": 11000000
     },
