@@ -1,5 +1,5 @@
 import './App.css';
-import { Container, Grid, SimpleGrid } from '@mantine/core';
+import { Container, Grid, Mark, SimpleGrid, Stack, Title } from '@mantine/core';
 import WormholeSelect from './components/wormholeSelect/WormholeSelect';
 import { useState } from 'react';
 import MassSelect from './components/massselect/MassSelect';
@@ -17,7 +17,10 @@ export function App() {
 
   console.log({mass, modifiedMass, massPassed, massLeft : modifiedMass - massPassed})
 
-  return (
+  return (<>
+    <Stack bg='#FFE06677' w='100vw' h={75} ta='center' justify='center'>
+     <Title c='black'><Mark color='orange' px='md'>eve-whmass.space</Mark> is now <Mark color='orange' px='md'>whmass.contrum.space</Mark></Title>
+    </Stack>
     <Container fluid my="md">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xs">
         <Grid gutter="sm">
@@ -36,6 +39,7 @@ export function App() {
         <JumpsLeft mass={modifiedMass} massPassed={massPassed} />
       </SimpleGrid>
     </Container >
+    </>
   );
 }
 
