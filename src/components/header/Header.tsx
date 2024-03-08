@@ -33,7 +33,7 @@ export default function Header() {
             <Divider orientation='horizontal' />
             <Group>
               <Anchor
-                href="https://maps.contrum.space"
+                href="https://content.contrum.space"
                 target="_blank"
                 c="yellow"
               >
