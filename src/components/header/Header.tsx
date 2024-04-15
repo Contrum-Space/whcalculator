@@ -27,10 +27,13 @@ export default function Header() {
             w="auto"
             className={classes.logo}
           ></Image>
-
+          <Divider orientation="vertical" />
+          <Image src="/PartnerBadge.png" h={75} w="auto"></Image>
           <Stack ml="auto" gap={2}>
-            <Text ta="center" fw='bold'>More tools</Text>
-            <Divider orientation='horizontal' />
+            <Text ta="center" fw="bold">
+              More tools
+            </Text>
+            <Divider orientation="horizontal" />
             <Group>
               <Anchor
                 href="https://content.contrum.space"
@@ -39,14 +42,12 @@ export default function Header() {
               >
                 Content Finder
               </Anchor>
-              <HoverCard width='auto' shadow="md">
+              <HoverCard width="auto" shadow="md">
                 <HoverCard.Target>
-                  <Anchor c='yellow'>Structure Watch</Anchor>
+                  <Anchor c="yellow">Structure Watch</Anchor>
                 </HoverCard.Target>
                 <HoverCard.Dropdown>
-                  <Text size="sm">
-                    Coming Soon
-                  </Text>
+                  <Text size="sm">Coming Soon</Text>
                 </HoverCard.Dropdown>
               </HoverCard>
             </Group>
